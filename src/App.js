@@ -1,16 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import ListaProdutos from './componentes/ListaProdutos';
+import axios from 'axios';
 
-const Produtos = [{
-  nome: "Teste",
-  preco: 10.00,
-},
-{
-  nome: "Teste2",
-  preco: 20.00,
-},
-];
+let produtos = [];
+axios.get('')
+.then(res=>{
+  produtos = res.data;
+  console.log(produtos);
+});
 
 function App() {
   return (
